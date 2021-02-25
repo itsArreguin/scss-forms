@@ -1,0 +1,222 @@
+//Prototype forms from Aerostatic by Brandon Arreguin
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+$aquacloud:                                     #20D0E0;
+$pinkcloud:                                     #FF2883;
+$greencloud:                                    #00FAA3;
+$yellowcloud:                                   #EEE000;
+$darkcloud:                                     #181816;
+$light:                                         #FFFFFF;
+
+$black:                                         #000000;
+$greyst:                                        #F8F8F8;
+$greynd:                                        #F6F6F6;
+$greyrd:                                        #E8E8E8;
+$greyth:                                        #C4C4C4;
+
+$darkaqua:                                      #1ABDCC;
+$darkpink:                                      #DF0E65;
+$darkgreen:                                     #02DB8F;
+$darkyellow:                                    #D7C900;
+
+
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, span, input, button, label, textarea{
+    font-family: 'Montserrat', sans-serif;
+}
+
+button, input{
+    outline: none !important;
+    transition: 0.3s ease;
+}
+
+.form-shadow{
+    box-shadow: 0px 12px 40px #c0c3e241;
+}
+
+//Forms general styles
+
+.form{
+    position: relative;
+    display: block;
+    width: auto;
+    height: auto;
+    padding: 50px 50px;
+    margin: auto;
+    background: $light;
+    -webkit-box-shadow: 0px 0px 15px #00000028;
+            box-shadow: 0px 0px 15px #00000028;
+    border-radius: 35px;
+    z-index: 100;
+
+    &.home-square{
+        position: relative;
+        width: 5rem;
+        height: 5rem;
+        margin: auto;
+        display: flex;
+        margin-bottom: 2.5rem;
+
+        &.aerostatic-icon{
+            width: 100%;
+            height: 100%;
+            background-image: url(../../aero/isotipo/svg/aerostatic-icon.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+    }
+
+    &.form-title{
+        width: 18rem;
+        margin: auto;
+        height: auto;
+        text-align: center;
+        margin-bottom: 1.25rem;
+
+        &.login-txt{
+            font-size: 1rem;
+            font-weight: 500;
+            color: $darkcloud;
+        }
+
+        &.signup-text{
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: $darkcloud;
+        }
+    }
+
+    &.input-login-block{
+        display: block;
+        width: 18.75rem;
+        height: auto;
+        margin-bottom: 2.5rem;
+
+        &.form-file{
+            width: 100%;
+            height: 50px;
+            margin: 15px 0px;
+            font-size: 15px;
+            padding: 10px 15px;
+            border: 1px solid $greyth;
+            outline: 0px;
+            border-radius: 0.5rem;
+
+            &:focus{
+                -webkit-box-shadow: 0px 0px 0px 4px #129ba757;
+                        box-shadow: 0px 0px 0px 4px #129ba757;
+                border: 1px solid $aquacloud;
+            }
+        }
+    }
+
+    &.input-signup-block{
+        display: block;
+        width: 25rem;
+        height: auto;
+        margin-bottom: 2.5rem;
+
+        &.form-file{
+            width: 100%;
+            height: 50px;
+            margin: 15px 0px;
+            font-size: 15px;
+            padding: 10px 15px;
+            border: 1px solid $greyth;
+            outline: 0px;
+            border-radius: 0.5rem;
+
+            &:focus{
+                -webkit-box-shadow: 0px 0px 0px 4px #129ba757;
+                        box-shadow: 0px 0px 0px 4px #129ba757;
+                border: 1px solid $aquacloud;
+            }
+        }
+    }
+
+    // Send form button
+    .form-button{
+        width: 100%;
+        height: 50px;
+        margin-top: 30px;
+        border: 3px solid $aquacloud;
+        background: $aquacloud;
+        font-size: 15px;
+        font-weight: 500;
+        border-radius: .5rem;
+        color: $light;
+        cursor: pointer;
+    }
+
+    //Checkbox accept terms
+    .checkbox{
+        width: 100%;
+        height: auto;
+
+        &.accept-box {
+            display: flex;
+            position: relative;
+            cursor: pointer;
+            color: $darkaqua;
+        }
+        &.accept-box p{
+            color: $greyth;
+            font-size: 14px;
+            text-align: left;
+        }
+        &.accept-box p a{
+            color: $darkaqua;
+            transition: 0.3s ease;
+        }
+        &.accept-box p a:hover{
+            color: var(--dark);
+            transition: 0.3s ease;
+        }
+        &.accept-box svg { 
+            display: inline-block;
+            vertical-align: middle;
+            width: 42px;
+            height: 16px;
+            border-radius: 4px;
+            margin-right: 8px;
+            border: 1px solid $greyth;
+        }
+        &.accept-box input[type="checkbox-icon"] {
+            opacity: 0;
+            width: 1em;
+            height: 1em;
+            position: absolute;
+        
+        }
+        &.accept-box svg path {
+            transition: stroke-dashoffset .3s linear;
+        }
+        &.accept-box input[type="checkbox-icon"]:checked + svg path {
+            stroke-dashoffset: 0;
+            stroke: currentColor;
+        }
+        &.accept-box input[type="checkbox-icon"] + svg path {
+            stroke: var(--hover-blue);
+        }
+        &.accept-box input[type="checkbox-icon"]:checked + label {
+            text-decoration: line-through;
+        }
+        &.accept-box input[type="checkbox-icon"]:focus + svg {
+            -webkit-box-shadow: 0px 0px 0px 3px #129ba757;
+                    box-shadow: 0px 0px 0px 3px #129ba757;
+            border: 1px solid $aquacloud;
+            transition: 0.3s ease;
+        }
+        &.accept-box input[type="checkbox-icon"]:focus:not(:focus-visible) + svg {
+            outline: none;
+        }
+    }
+}
