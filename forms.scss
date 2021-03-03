@@ -1,5 +1,3 @@
-//Prototype forms from Aerostatic by Brandon Arreguin
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
 
 $aquacloud:                                     #20D0E0;
@@ -15,7 +13,7 @@ $greynd:                                        #F6F6F6;
 $greyrd:                                        #E8E8E8;
 $greyth:                                        #C4C4C4;
 
-$darkaqua:                                      #1ABDCC;
+$darkaqua:                                      #15A1AD;
 $darkpink:                                      #DF0E65;
 $darkgreen:                                     #02DB8F;
 $darkyellow:                                    #D7C900;
@@ -41,8 +39,9 @@ button, input{
     box-shadow: 0px 12px 40px #c0c3e241;
 }
 
-//Forms general styles
 
+
+//Forms general styles
 .form{
     position: relative;
     display: block;
@@ -94,72 +93,88 @@ button, input{
         }
     }
 
-    &.input-login-block{
-        display: block;
-        width: 18.75rem;
-        height: auto;
-        margin-bottom: 2.5rem;
-
-        &.form-file{
-            width: 100%;
-            height: 50px;
-            margin: 15px 0px;
-            font-size: 15px;
-            padding: 10px 15px;
-            border: 1px solid $greyth;
-            outline: 0px;
-            border-radius: 0.5rem;
-
-            &:focus{
-                -webkit-box-shadow: 0px 0px 0px 4px #129ba757;
-                        box-shadow: 0px 0px 0px 4px #129ba757;
-                border: 1px solid $aquacloud;
-            }
-        }
-    }
-
-    &.input-signup-block{
-        display: block;
-        width: 25rem;
-        height: auto;
-        margin-bottom: 2.5rem;
-
-        &.form-file{
-            width: 100%;
-            height: 50px;
-            margin: 15px 0px;
-            font-size: 15px;
-            padding: 10px 15px;
-            border: 1px solid $greyth;
-            outline: 0px;
-            border-radius: 0.5rem;
-
-            &:focus{
-                -webkit-box-shadow: 0px 0px 0px 4px #129ba757;
-                        box-shadow: 0px 0px 0px 4px #129ba757;
-                border: 1px solid $aquacloud;
-            }
-        }
-    }
-
-    // Send form button
-    .form-button{
+    .button-form{
         width: 100%;
         height: 50px;
-        margin-top: 30px;
-        border: 3px solid $aquacloud;
-        background: $aquacloud;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
         font-size: 15px;
         font-weight: 500;
         border-radius: .5rem;
-        color: $light;
+        transition: 0.3s ease;
         cursor: pointer;
+    
+        .aqua-btn{
+            background-color: $aquacloud;
+            border: 1px solid $aquacloud;
+        
+            &.hover{
+                background-color: $darkaqua;
+                border: 1px solid $darkaqua;
+            }
+            &.focus{
+                background-color: $darkaqua;
+                -webkit-box-shadow: 0px 0px 0px 4px #129ba757;
+                        box-shadow: 0px 0px 0px 4px #129ba757;
+                border: 1px solid $darkaqua;
+            }
+        }
+        
+        .pink-btn{
+            background-color: $pinkcloud;
+            border: 1px solid $pinkcloud;
+        
+            &.hover{
+                background-color: $darkpink;
+                border: 1px solid $darkpink;
+            }
+            &.focus{
+                background-color: $darkpink;
+                -webkit-box-shadow: 0px 0px 0px 4px #ff288257;
+                        box-shadow: 0px 0px 0px 4px #ff288257;
+                border: 1px solid $darkpink;
+            }
+        }
+    }
+    
+    
+    .input-form{
+        width: 100%;
+        height: 50px;
+        font-size: 15px;
+        padding: 10px 15px;
+        transition: 0.3s ease;
+    
+        .aqua-input{
+            border: 1px solid $greyth;
+            background: $light;
+    
+            &.focus{
+                border: 1px solid $aquacloud;
+                -webkit-box-shadow: 0px 0px 0px 4px #129ba757;
+                        box-shadow: 0px 0px 0px 4px #129ba757;
+            }
+        }
+    
+        .pink-input{
+            border: 1px solid $greyth;
+            background: $light;
+    
+            &.focus{
+                border: 1px solid $pinkcloud;
+                -webkit-box-shadow: 0px 0px 0px 4px #ff288257;
+                        box-shadow: 0px 0px 0px 4px #ff288257;
+            }
+        }
     }
 
     //Checkbox accept terms
     .checkbox{
         width: 100%;
         height: auto;
+        transition: 0.3s ease;
 
         &.accept-box {
             display: flex;
@@ -167,19 +182,23 @@ button, input{
             cursor: pointer;
             color: $darkaqua;
         }
+
         &.accept-box p{
             color: $greyth;
             font-size: 14px;
             text-align: left;
         }
+
         &.accept-box p a{
             color: $darkaqua;
             transition: 0.3s ease;
         }
+
         &.accept-box p a:hover{
             color: var(--dark);
             transition: 0.3s ease;
         }
+
         &.accept-box svg { 
             display: inline-block;
             vertical-align: middle;
@@ -189,6 +208,7 @@ button, input{
             margin-right: 8px;
             border: 1px solid $greyth;
         }
+
         &.accept-box input[type="checkbox-icon"] {
             opacity: 0;
             width: 1em;
@@ -196,25 +216,31 @@ button, input{
             position: absolute;
         
         }
+
         &.accept-box svg path {
             transition: stroke-dashoffset .3s linear;
         }
+
         &.accept-box input[type="checkbox-icon"]:checked + svg path {
             stroke-dashoffset: 0;
             stroke: currentColor;
         }
+
         &.accept-box input[type="checkbox-icon"] + svg path {
             stroke: var(--hover-blue);
         }
+
         &.accept-box input[type="checkbox-icon"]:checked + label {
             text-decoration: line-through;
         }
+
         &.accept-box input[type="checkbox-icon"]:focus + svg {
             -webkit-box-shadow: 0px 0px 0px 3px #129ba757;
                     box-shadow: 0px 0px 0px 3px #129ba757;
             border: 1px solid $aquacloud;
             transition: 0.3s ease;
         }
+
         &.accept-box input[type="checkbox-icon"]:focus:not(:focus-visible) + svg {
             outline: none;
         }
