@@ -12,6 +12,7 @@ $greyst:                                        #F8F8F8;
 $greynd:                                        #F6F6F6;
 $greyrd:                                        #E8E8E8;
 $greyth:                                        #C4C4C4;
+$semi-dark:                                     #AFAFAF;
 
 $darkaqua:                                      #15A1AD;
 $darkpink:                                      #DF0E65;
@@ -35,9 +36,6 @@ button, input{
     transition: 0.3s ease;
 }
 
-.form-shadow{
-    box-shadow: 0px 12px 40px #c0c3e241;
-}
 
 
 
@@ -73,6 +71,30 @@ button, input{
         }
     }
 
+    .login-block-form{
+        width: 18.75rem;
+        height: auto;
+    }
+
+    .signup-block-form{
+        width: 25rem;
+        height: auto;
+
+        &.input-grid{
+            width: 100%;
+            height: auto;
+            max-height: 50px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr;
+            grid-gap: 1.25rem;
+        }
+    }
+
+    .form-shadow{
+        box-shadow: 0px 12px 40px #c0c3e241;
+    }
+
     &.form-title{
         width: 18rem;
         margin: auto;
@@ -90,6 +112,37 @@ button, input{
             font-size: 1.5rem;
             font-weight: 500;
             color: $darkcloud;
+        }
+    }
+
+
+    .input-form{
+        width: 100%;
+        height: 50px;
+        font-size: 15px;
+        padding: 10px 15px;
+        transition: 0.3s ease;
+    
+        .aqua-input{
+            border: 1px solid $greyth;
+            background: $light;
+    
+            &.focus{
+                border: 1px solid $aquacloud;
+                -webkit-box-shadow: 0px 0px 0px 4px #129ba757;
+                        box-shadow: 0px 0px 0px 4px #129ba757;
+            }
+        }
+    
+        .pink-input{
+            border: 1px solid $greyth;
+            background: $light;
+    
+            &.focus{
+                border: 1px solid $pinkcloud;
+                -webkit-box-shadow: 0px 0px 0px 4px #ff288257;
+                        box-shadow: 0px 0px 0px 4px #ff288257;
+            }
         }
     }
 
@@ -138,39 +191,65 @@ button, input{
             }
         }
     }
-    
-    
-    .input-form{
+
+    .pass-wth{
         width: 100%;
-        height: 50px;
-        font-size: 15px;
-        padding: 10px 15px;
-        transition: 0.3s ease;
-    
-        .aqua-input{
-            border: 1px solid $greyth;
-            background: $light;
-    
-            &.focus{
-                border: 1px solid $aquacloud;
-                -webkit-box-shadow: 0px 0px 0px 4px #129ba757;
-                        box-shadow: 0px 0px 0px 4px #129ba757;
-            }
-        }
-    
-        .pink-input{
-            border: 1px solid $greyth;
-            background: $light;
-    
-            &.focus{
-                border: 1px solid $pinkcloud;
-                -webkit-box-shadow: 0px 0px 0px 4px #ff288257;
-                        box-shadow: 0px 0px 0px 4px #ff288257;
+        height: auto;
+        text-align: center;
+
+        &.pass-txt-chg{
+            font-size: 14px;
+            color: $aquacloud;
+            transition: 0.3s ease;
+
+            &:hover{
+                color: $darkcloud;
             }
         }
     }
 
+    .account-link{
+        display: flex;
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        margin-top: 2rem;
+
+        &.li-flex{
+            display: flex;
+            text-align: center;
+
+            &.account-txt{
+                font-size: 14px;
+                transition: 0.3s ease;
+            }
+
+            & h5{
+                color: $darkcloud;
+                font-weight: 400;
+            }
+
+            &.aqua-txt{
+                color: $aquacloud;
+
+                &:hover{
+                    color: $semi-dark;
+                }
+            }
+
+            &.pink-txt{
+                color: $pinkcloud;
+
+                &:hover{
+                    color: $semi-dark;
+                }
+            }
+        }
+    }
+
+
     //Checkbox accept terms
+
     .checkbox{
         width: 100%;
         height: auto;
@@ -298,6 +377,13 @@ button, input{
 
 
 
+
 //Responsive media queries
 
-@media screen and(min-width: 380px) and(max-width: 787px){}
+@media screen and(min-width: 380px) and(max-width: 787px){
+    .login-block-form,
+    .signup-block-form{
+        width: 100%;
+        height: auto;
+    }
+}
